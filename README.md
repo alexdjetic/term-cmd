@@ -1,8 +1,8 @@
 # term-cmd
-my personnal command linux terminal
+<p>my personnal command linux terminal</p>
 
 ## description
-this command for my personnal use
+<p>this command for my personnal use</p>
 
 ## requirement
 <strong> ⚠ only work on linux ⚠ </strong>
