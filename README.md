@@ -4,7 +4,7 @@ my personnal command linux terminal
 ## description
 this command for my personnal use
 
-"" requirement
+## requirement
 <strong> ⚠ only work on linux ⚠ </strong>
 
 terminale: bash/sh
@@ -15,3 +15,5 @@ do => apt install build-essential
 
 ### other distro
 already install in kernel
+
+have a good day
