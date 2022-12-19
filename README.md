@@ -7,13 +7,13 @@ this command for my personnal use
 ## requirement
 <strong> ⚠ only work on linux ⚠ </strong>
 
-terminale: bash/sh
-C : g++
+<p>terminale: bash/sh<p>
+<p>C : g++</p>
 
 ### Ubuntu
-do => apt install build-essential
+<p>do => apt install build-essential</p>
 
 ### other distro
-already install in kernel
+<p>already install in kernel</p>
 
-have a good day
+<p>have a good day</p>
