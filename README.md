@@ -29,4 +29,6 @@ or
 ### alpine
 `apk add gcc`
 
-<p>😉 have a good day</p>
+## final word
+<p> you can use freely these command easily, if you upgrade these utility don't forget to pull a request, i check it then update my utility </p>
+<p> 😉 have a good day</p>
