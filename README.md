@@ -11,7 +11,7 @@
 <p>C : g++</p>
 
 ### Ubuntu
-<p>do => apt install build-essential</p>
+`apt install build-essential`
 
 ### other distro
 <p>already install in kernel</p>
