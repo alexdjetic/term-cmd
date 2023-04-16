@@ -11,7 +11,7 @@
 <p>C : g++, gcc</p>
 
 ## install
-git clone https://github.com/alexdjetic/term-cmd.git
+`git clone https://github.com/alexdjetic/term-cmd.git`
 
 ## compiler
 
