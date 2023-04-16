@@ -2,7 +2,7 @@
 <p>my personnal command linux terminal</p>
 
 ## description
-<p>this is some utility taht i use to manage my server and my life easy in terminal </p>
+<p>this is some utility that i use to manage my server and my life easy in terminal </p>
 
 ## requirement
 <strong> ⚠ only work on linux ⚠ </strong>
@@ -10,10 +10,23 @@
 <p>terminale: bash/sh<p>
 <p>C : g++, gcc</p>
 
+## install
+git clone https://github.com/alexdjetic/term-cmd.git
+
+## compiler
+
 ### Ubuntu
 `apt install build-essential`
 
-### other distro
-<p>already install in kernel</p>
+### fedora
+`dnf install gcc`
+
+### arch
+`pacman -S gcc`
+or
+`yay -S gcc`
+
+### alpine
+`apk add gcc`
 
 <p>😉 have a good day</p>
