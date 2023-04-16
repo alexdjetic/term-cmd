@@ -9,7 +9,12 @@
 
 <p>terminale: bash/sh<p>
 <p>C : g++, gcc</p>
-don't forget to put exec right to these utility: `chmod +x *.sh` then exec `./util.sh`
+
+don't forget to put exec right to these utility: 
+`chmod +x *.sh` 
+
+to exec :
+`./util.sh`
 
 ## install
 `git clone https://github.com/alexdjetic/term-cmd.git`
