@@ -2,7 +2,7 @@
 <p>my personnal command linux terminal</p>
 
 ## description
-<p>this is some utility that i use to manage my server and my life easy in terminal </p>
+<p>this is some utility that i use to manage my server and made my life easy in the terminal </p>
 
 ## requirement
 <strong> ⚠ only work on linux ⚠ </strong>
