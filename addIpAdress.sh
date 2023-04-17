@@ -3,7 +3,7 @@
 echo "auto lo"
 echo "iface lo inet loopback"
 
-echo "iface eth inet static"
-echo "address $1"
-echo "netmask $2"
-echo "gateway $3"
+echo "iface $1 inet static"
+echo "address $2"
+echo "netmask $3"
+echo "gateway $4"
