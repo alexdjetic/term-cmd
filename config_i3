@@ -1,0 +1,144 @@
+### desktop config
+set $mod Mod4
+font pango:DejaVu Sans Mono 8
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id numlock on
+exec --no-startup-id snapd
+exec --no-startup-id picom
+exec --no-startup-id kdeconnect-indicator
+
+# NetworkManager/nmapplet
+exec --no-startup-id nm-applet
+
+#wallpaper
+exec --no-startup-id feh --bg-fill /home/djeticalexandre/wallpaper/magica.jpg
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+M move right
+
+# split
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+
+# layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+z layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# window title
+for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] gaps inner 10
+for_window [class="^.*"] gaps outer 10
+
+### workspace config
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+### switch to workspace
+bindsym $mod+ampersand workspace number $ws1
+bindsym $mod+eacute workspace number $ws2
+bindsym $mod+quotedbl workspace number $ws3
+bindsym $mod+apostrophe workspace number $ws4
+bindsym $mod+parenleft workspace number $ws5
+bindsym $mod+minus workspace number $ws6
+bindsym $mod+egrave workspace number $ws7
+bindsym $mod+underscore workspace number $ws8
+bindsym $mod+ccedilla workspace number $ws9
+bindsym $mod+agrave workspace number $ws10
+
+### move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+eacute move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+egrave move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+ccedilla move container to workspace number $ws9
+bindsym $mod+Shift+agrave move container to workspace number $ws10
+
+### bind
+bindsym $mod+q kill
+bindsym Mod1+r reload
+bindsym Mod1+g exec xfce4-appfinder
+bindsym $mod+x exec pkill -u $USER
+bindsym Mod1+b exec firefox
+bindsym Mod1+d exec flatpak run com.discordapp.Discord
+bindsym Mod1+c exec pulsar
+bindsym Mod1+l exec onlyoffice-desktopeditors
+bindsym Mod1+h exec htop
+bindsym Mod1+s exec steam
+bindsym Mod1+v exec nautilus
+bindsym Ctrl+Mod1+t exec konsole
+bindsym Mod1+f exec dmenu_run
+bindsym Mod1+m exec spectacle
+
+### screen layout
+bindsym $mod+p mode "screen-layout-settings";
+
+mode "screen-layout-settings"{
+	bindsym s exec "xrandr --output eDP --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate normal"
+	bindsym c exec "xrandr --output eDP --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate normal --same-as eDP"
+	bindsym n exec "xrandr --output eDP --mode 1920x1080 --pos 1920x0 --rotate normal "
+	bindsym Escape mode "default"
+}
+
+### nit screen
+bindsym Mod1+k mode "brightnessCLI";
+
+mode "brightnessCLI"{
+	bindsym amperstand exec --no-startup-id "brightnessctl set 10% -p"
+	bindsym eacute exec --no-startup-id "brightnessctl set 20% -p"
+	bindsym quotedbl exec --no-startup-id "brightnessctl set 30% -p"
+	bindsym apostrophe exec--no-startup-id "brightnessctl set 40% -p"
+	bindsym parentleft exec --no-startup-id "brightnessctl set 50% -p"
+	bindsym minus exec --no-startup-id "brightnessctl set 60% -p"
+	bindsym egrave exec --no-startup-id "brightnessctl set 70% -p"
+	bindsym underscore exec --no-startup-id "brightnessctl set 80% -p"
+	bindsym ccedilla exec --no-startup-id "brightnessctl set 90% -p"
+	bindsym agrave exec --no-startup-id "brightnessctl set 100% -p"
+	bindsym Escape mode "default"
+
+}
+
+### CLI only mode
+bindsym Mod1+n mode "CLI mode";
+
+mode "CLI mode" {
+       bindsym $mod+Escape mode "default"
+}
+
+### bar
+exec_always --no-startup-id $HOME/polybar-collection/launch.sh
+#bar {
+        #status_command i3status
+	#status_command $HOME/polybar-collection/launch.sh
+	#position top
+#}
