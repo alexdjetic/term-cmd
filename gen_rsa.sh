@@ -21,6 +21,15 @@ generate() {
     echo "Clés RSA générées avec succès dans $key_dir"
 }
 
+show_help() {
+    echo "Usage: $0 [-d|--dir <directory>] [-f|--file <prefix>] [-v|--version] [-h|--help]"
+    echo "Options:"
+    echo "-d, --dir <directory>   Spécifie le répertoire où les clés seront générées (par défaut: $default_dir)"
+    echo "-f, --file <prefix>     Spécifie le préfixe des noms de fichiers (par défaut: $default_prefix)"
+    echo "-v, --version           Affiche la version du script"
+    echo "-h, --help              Affiche l'aide"
+}
+
 while [[ $# -gt 0 ]]
 do
     key="$1"
@@ -33,6 +42,14 @@ do
         -f|--file)
         prefix="$2"
         shift
+        ;;
+        -v|--version)
+        echo "version gen_rsa: 1.0.1"
+        exit 0
+        ;;
+        -h|--help)
+        show_help
+        exit 0
         ;;
         *)
         echo "Option non valide: $key"
