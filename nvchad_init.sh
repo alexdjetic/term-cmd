@@ -19,4 +19,5 @@ else
 fi
 
 echo "add to config: ~/.config/nvim/"
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 nvim "check if all work"
