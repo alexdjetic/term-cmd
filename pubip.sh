@@ -1,1 +1,0 @@
-curl ifconfig.co
