@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ $# -lt 2 ]: then
+  echo "Usage: $0 </mnt/sdb,/mnt/sdc,...> <path/to/file.iso>"
+  exit 1
+fi
+
 create_bootable_iso() {
   local usb_device=$1
   local image=$2
